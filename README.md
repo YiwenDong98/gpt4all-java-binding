@@ -1,7 +1,7 @@
 # gpt4all-java-binding
 
 Binding for using gpt4all with Java.
-Built using JPA.
+Built using JNA.
 Only linux `*.so` are included.
 Other systems have not been tested.
 Feel free to add them.
