@@ -6,11 +6,11 @@
 
   <groupId>com.yiwendong.gpt4all</groupId>
   <artifactId>gpt4all-java-binding</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1</version>
 
   <name>gpt4all-java-binding</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/YiwenDong98/gpt4all-java-binding/tree/master</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -89,7 +89,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.yiwendong.gpt4all.Main</mainClass>
+              <mainClass>com.yiwendong.gpt4all.TerminalChatMain</mainClass>
             </manifest>
           </archive>
         </configuration>

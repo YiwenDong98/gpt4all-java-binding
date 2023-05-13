@@ -1,8 +1,6 @@
 package com.yiwendong.gpt4all;
 
 import com.sun.jna.Pointer;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -15,7 +13,7 @@ class LLModelTest {
         return new LLModel(LLModel.getInstance().llmodel_llama_create(), "llama") {
             @Override
             public void close() throws Exception {
-                llModel.llmodel_llama_destroy(model);
+                cllModel.llmodel_llama_destroy(model);
             }
         };
     }

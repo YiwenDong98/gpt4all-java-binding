@@ -21,20 +21,20 @@ public abstract class LLModel implements AutoCloseable {
     protected final Pointer model;
     protected final String modelType;
     protected String modelName;
-    protected final CGPT4AllLLModel llModel;
+    protected final CGPT4AllLLModel cllModel;
 
     protected LLModel(Pointer model, String modelType) {
         this.model = model;
         this.modelType = modelType;
-        this.llModel = LLModel.getInstance();
+        this.cllModel = LLModel.getInstance();
     }
 
     public boolean loadModel(Path modelPath) {
-        llModel.llmodel_loadModel(model, modelPath.toString());
+        cllModel.llmodel_loadModel(model, modelPath.toString());
         String fileName = modelPath.toFile().getName();
         this.modelName = fileName.split("\\.(?=[^\\.]+$)")[0];
 
-        if (llModel.llmodel_isModelLoaded(model)) {
+        if (cllModel.llmodel_isModelLoaded(model)) {
             return true;
         } else {
             return false;
@@ -59,7 +59,7 @@ public abstract class LLModel implements AutoCloseable {
 
         StringBuffer responseBuffer = new StringBuffer();
 
-        llModel.llmodel_prompt(this.model,
+        cllModel.llmodel_prompt(this.model,
                 prompt,
                 EMPTY_PROMPT_CALLBACK,
                 collectResponseCallBackToString(responseBuffer),
